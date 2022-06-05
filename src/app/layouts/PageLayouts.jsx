@@ -3,8 +3,8 @@ import logo from '../../assets/images/logo_mobile.png'
 
 const PageHeader = ({ isSignup, pageId }) => {
   return (
-    <div className="flex items-center w-full border-b h-18 bg-grey-light border-grey-medium">
-      <div className="logo-wrapper max-w-60 pl-[29px] pr-10 border-r border-grey-medium h-full flex items-center">
+    <div className="flex items-center w-full bg-white border-b h-18 sm:bg-grey-light border-grey-medium shadow-header sm:shadow-none">
+      <div className="logo-wrapper max-w-60 pl-4 sm:pl-[29px] pr-4 sm:pr-10 border-r border-grey-medium h-full flex items-center">
         <a href="/">
           <img src={logo} alt="Desktop Logo" className="w-full " />
         </a>
@@ -32,7 +32,7 @@ const PageHeader = ({ isSignup, pageId }) => {
 
 const PageLayouts = ({ isSignup = true, pageId, children }) => {
   return (
-    <div className="flex flex-col w-full min-h-screen bg-grey-light">
+    <div className="flex flex-col w-full min-h-screen bg-white sm:bg-grey-light">
       <PageHeader pageId={pageId} isSignup={isSignup} />
       {children}
     </div>

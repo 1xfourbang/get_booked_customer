@@ -1,5 +1,9 @@
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx,html}', './public/index.html'],
+  content: [
+    './src/**/*.{js,jsx,ts,tsx,html}',
+    './public/index.html',
+    './node_modules/tw-elements/dist/js/**/*.js',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -39,12 +43,14 @@ module.exports = {
         grey: '#E8E8E8',
         'grey-light': '#FAFAFA',
         'grey-medium': '#DDDDDD',
+        'grey-dark': '#707070',
         primary: '#604AAF',
       },
       boxShadow: {
         light: '6px 3px 13px #0000000F',
+        header: '0 3px 6px #00000014',
       },
     },
   },
-  plugins: [],
+  plugins: [require('tw-elements/dist/plugin')],
 }
