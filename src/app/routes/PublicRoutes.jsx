@@ -4,12 +4,16 @@ import Loading from '../components/Loading'
 
 // eslint-disable-next-line
 const PublicRoutes = () => {
-  const HomeWrapper = lazy(() => import('../pages/home'))
+  const HomeWrapper = lazy(() => import('../pages/Home'))
+  const SearchWrapper = lazy(() => import('../pages/Search'))
+  const NotFound = lazy(() => import('../pages/NotFound'))
 
   return (
     <Suspense fallback={<Loading />}>
       <Switch>
         <Route path="/" exact component={HomeWrapper} />
+        <Route path="/search/:id" exact component={SearchWrapper} />
+        <Route component={NotFound} />
       </Switch>
     </Suspense>
   )
