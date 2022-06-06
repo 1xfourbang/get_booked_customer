@@ -1,21 +1,25 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch, Router } from 'react-router-dom'
-import { createBrowserHistory } from 'history'
-import PublicRoutes from './routes/PublicRoutes'
-
-const history = createBrowserHistory()
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BookingContextProvider } from './context/BookingContext'
+import Home from './pages/Home'
+import RestaurantsList from './pages/RestaurantList'
+import Search from './pages/Search'
+import NotFound from './pages/NotFound'
 
 const App = () => {
   return (
-    <Router history={history}>
+    <BookingContextProvider>
       <BrowserRouter>
-        <Switch>
-          <Route>
-            <PublicRoutes />
+        <Routes>
+          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Home />} />
+          <Route path="search/:id" element={<Search />} />
+          <Route path="lists" element={<RestaurantsList />}>
+            <Route path=":id" element={<RestaurantsList />} />
           </Route>
-        </Switch>
+        </Routes>
       </BrowserRouter>
-    </Router>
+    </BookingContextProvider>
   )
 }
 
