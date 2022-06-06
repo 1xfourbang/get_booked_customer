@@ -24,6 +24,13 @@
   appearance: unset;
 }
 
+@media (max-width: 767px) {
+  [type='time'],
+  [type='party'] {
+    background-size: 12%;
+  }
+}
+
 [type='date']::-webkit-inner-spin-button,
 [type='time']::-webkit-inner-spin-button {
   display: none;

@@ -40,8 +40,8 @@ const Search = () => {
           </p>
           <div className="booking-details-form">
             <form onSubmit={handleSubmit(onSubmit, onSubmitError)}>
-              <div className="flex flex-wrap items-center justify-center my-10 -mx-6 sm:justify-between md:my-13">
-                <div className="mx-6 mb-5">
+              <div className="flex flex-col flex-wrap items-center justify-center my-10 -mx-6 md:flex-row md:justify-between md:my-13">
+                <div className="mx-3 mb-5 lg:mx-6">
                   <InputElement
                     rules={{
                       required: `Date is required`,
@@ -53,7 +53,7 @@ const Search = () => {
                     errors={errors}
                   />
                 </div>
-                <div className="mx-6 mb-5">
+                <div className="mx-3 mb-5 lg:mx-6">
                   <InputElement
                     rules={{
                       required: `Time is required`,
@@ -61,12 +61,12 @@ const Search = () => {
                     name="booking_time"
                     type="time"
                     control={control}
-                    customWidth="min-w-[220px] sm:min-w-[150px]"
+                    customWidth="min-w-[220px] md:min-w-[150px]"
                     label={<Times />}
                     errors={errors}
                   />
                 </div>
-                <div className="mx-6 mb-5">
+                <div className="mx-3 mb-5 lg:mx-6">
                   <SelectElement
                     rules={{
                       required: `Party is required`,
@@ -78,7 +78,7 @@ const Search = () => {
                     name="booking_party"
                     type="party"
                     control={control}
-                    customWidth="min-w-[220px] sm:min-w-[150px]"
+                    customWidth="min-w-[220px] md:min-w-[150px]"
                     label={<Users />}
                     errors={errors}
                   />
@@ -88,7 +88,7 @@ const Search = () => {
               <div className="w-full text-center">
                 <button
                   type="submit"
-                  className="font-avenir-medium text-5 leading-5 border border-primary rounded-full sm:rounded h-13 sm:h-11 sm:max-w-[180px] w-full bg-primary sm:bg-white text-white sm:text-primary"
+                  className="font-avenir-medium text-5 leading-5 border border-primary rounded-full md:rounded h-13 md:h-11 md:max-w-[180px] w-full bg-primary md:bg-white text-white md:text-primary"
                 >
                   Find available
                 </button>
