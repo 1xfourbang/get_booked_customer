@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import React from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import PageLayouts from '../layouts/PageLayouts'
 import { Calendar, Times, Users } from '../components/Icons'
 import '../../assets/styles/custom.css'
@@ -10,7 +10,8 @@ import { useBooking } from '../context/BookingContext'
 
 const Search = () => {
   const { id } = useParams()
-  const { booking, setBooking } = useBooking()
+  const navigate = useNavigate()
+  const { setBooking } = useBooking()
 
   const {
     control,
@@ -25,12 +26,9 @@ const Search = () => {
     },
   })
 
-  useEffect(() => {
-    console.log('>>>>>> booking context: ', booking)
-  }, [booking, setBooking])
-
   const onSubmit = (data) => {
     setBooking(data)
+    navigate(`/lists/${id}`)
   }
 
   const onSubmitError = (error) => {
