@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Loading from '../components/Loading'
+import { BookingContextProvider } from '../context/BookingContext'
 
 // eslint-disable-next-line
 const PublicRoutes = () => {
@@ -9,13 +10,15 @@ const PublicRoutes = () => {
   const NotFound = lazy(() => import('../pages/NotFound'))
 
   return (
-    <Suspense fallback={<Loading />}>
-      <Switch>
-        <Route path="/" exact component={HomeWrapper} />
-        <Route path="/search/:id" exact component={SearchWrapper} />
-        <Route component={NotFound} />
-      </Switch>
-    </Suspense>
+    <BookingContextProvider>
+      <Suspense fallback={<Loading />}>
+        <Switch>
+          <Route path="/" exact component={HomeWrapper} />
+          <Route path="/search/:id" exact component={SearchWrapper} />
+          <Route component={NotFound} />
+        </Switch>
+      </Suspense>
+    </BookingContextProvider>
   )
 }
 

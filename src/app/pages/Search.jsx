@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import PageLayouts from '../layouts/PageLayouts'
 import { Calendar, Times, Users } from '../components/Icons'
@@ -6,9 +6,11 @@ import '../../assets/styles/custom.css'
 import { useForm } from 'react-hook-form'
 import InputElement from '../components/Form/InputElement'
 import SelectElement from '../components/Form/SelectElement'
+import { useBooking } from '../context/BookingContext'
 
 const Search = () => {
   const { id } = useParams()
+  const { booking, setBooking } = useBooking()
 
   const {
     control,
@@ -23,8 +25,12 @@ const Search = () => {
     },
   })
 
+  useEffect(() => {
+    console.log('>>>>>> booking context: ', booking)
+  }, [booking, setBooking])
+
   const onSubmit = (data) => {
-    console.log('>>>>>> onSubmit: ', data)
+    setBooking(data)
   }
 
   const onSubmitError = (error) => {
