@@ -24,7 +24,7 @@ const InputElement = ({
             id={name}
             value={value}
             onChange={onChange}
-            className={`px-3 ml-4 leading-5 border rounded h-14 border-grey-dark text-5 ${
+            className={`px-3 ml-3 leading-5 border rounded h-14 border-grey-dark text-5 ${
               customWidth ? customWidth : 'min-w-[220px]'
             }  w-full`}
           />
@@ -34,4 +34,4 @@ const InputElement = ({
   )
 }
 
-export default InputElement
+export { InputElement }
