@@ -33,7 +33,7 @@ const HomeHeader = () => {
 
 const HomeFooter = () => {
   return (
-    <div className="flex items-center justify-center h-18 sm:h-[150px] bg-grey">
+    <div className="flex items-center justify-center h-18 sm:h-[150px] bg-grey sticky top-screen">
       <p className="font-avenir-medium text-3 sm:text-5">
         Copyright 2022 Vitalize Business Solutions www.vitalize.ie
       </p>
