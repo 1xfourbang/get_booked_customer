@@ -27,8 +27,8 @@ const Search = () => {
     console.log('>>>>>> onSubmit: ', data)
   }
 
-  const onSubmitError = (errors) => {
-    console.log('>>>>>> onSubmitError: ', errors)
+  const onSubmitError = (error) => {
+    console.log('>>>>>> onSubmitError: ', error)
   }
 
   return (
@@ -49,6 +49,8 @@ const Search = () => {
                     name="booking_date"
                     type="date"
                     control={control}
+                    label={<Calendar />}
+                    errors={errors}
                   />
                 </div>
                 <div className="mx-6 mb-5">
@@ -60,6 +62,8 @@ const Search = () => {
                     type="time"
                     control={control}
                     customWidth="min-w-[220px] sm:min-w-[150px]"
+                    label={<Times />}
+                    errors={errors}
                   />
                 </div>
                 <div className="mx-6 mb-5">
@@ -75,6 +79,8 @@ const Search = () => {
                     type="party"
                     control={control}
                     customWidth="min-w-[220px] sm:min-w-[150px]"
+                    label={<Users />}
+                    errors={errors}
                   />
                 </div>
               </div>

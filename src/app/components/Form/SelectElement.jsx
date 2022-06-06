@@ -1,13 +1,13 @@
 import React from 'react'
 import { Controller } from 'react-hook-form'
 
-import { Users } from '../Icons'
-
 export default function SelectElement({
   name,
   control,
   type = 'text',
   customWidth,
+  label,
+  errors,
   ...props
 }) {
   return (
@@ -19,9 +19,7 @@ export default function SelectElement({
         render={({ field: { onChange } }) => {
           return (
             <div className="flex items-center">
-              <label htmlFor="booking_party">
-                <Users />
-              </label>
+              <label htmlFor="booking_party">{label}</label>
               <select
                 name="booking_party"
                 id="booking_party"
