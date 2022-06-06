@@ -3,12 +3,32 @@ import { useParams } from 'react-router-dom'
 import PageLayouts from '../layouts/PageLayouts'
 import { Calendar, Times, Users } from '../components/Icons'
 import '../../assets/styles/custom.css'
+import { useForm } from 'react-hook-form'
+import InputElement from '../components/Form/InputElement'
+import SelectElement from '../components/Form/SelectElement'
 
 const Search = () => {
   const { id } = useParams()
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    mode: 'all',
+    defaultValues: {
+      booking_date: '',
+      booking_time: '',
+      booking_party: '-1',
+    },
+  })
+
+  const onSubmit = (data) => {
+    console.log('>>>>>> onSubmit: ', data)
+  }
+
+  const onSubmitError = (errors) => {
+    console.log('>>>>>> onSubmitError: ', errors)
   }
 
   return (
@@ -19,48 +39,43 @@ const Search = () => {
             Select booking details
           </p>
           <div className="booking-details-form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(onSubmit, onSubmitError)}>
               <div className="flex flex-wrap items-center justify-center my-10 -mx-6 sm:justify-between md:my-13">
-                <div className="flex items-center mx-6 mb-5">
-                  <label htmlFor="datepicker">
-                    <Calendar />
-                  </label>
-                  <input
+                <div className="mx-6 mb-5">
+                  <InputElement
+                    rules={{
+                      required: `Date is required`,
+                    }}
+                    name="booking_date"
                     type="date"
-                    name="booking-date"
-                    id="datepicker"
-                    className="px-3 ml-4 leading-5 border rounded h-14 border-grey-dark text-5 min-w-[220px] w-full"
+                    control={control}
                   />
                 </div>
-                <div className="flex items-center mx-6 mb-5">
-                  <label htmlFor="timepicker">
-                    <Times />
-                  </label>
-                  <input
+                <div className="mx-6 mb-5">
+                  <InputElement
+                    rules={{
+                      required: `Time is required`,
+                    }}
+                    name="booking_time"
                     type="time"
-                    name="booking-time"
-                    id="timepicker"
-                    className="px-3 ml-4 leading-5 border rounded h-14 border-grey-dark text-5 min-w-[220px] sm:min-w-[150px] w-full"
+                    control={control}
+                    customWidth="min-w-[220px] sm:min-w-[150px]"
                   />
                 </div>
-                <div className="flex items-center mx-6 mb-5">
-                  <label htmlFor="booking-party">
-                    <Users />
-                  </label>
-                  <select
+                <div className="mx-6 mb-5">
+                  <SelectElement
+                    rules={{
+                      required: `Party is required`,
+                      validate: (value) =>
+                        !value.length || value === '-1'
+                          ? 'Party is required'
+                          : true,
+                    }}
+                    name="booking_party"
                     type="party"
-                    name="booking-party"
-                    id="booking-party"
-                    defaultChecked="-1"
-                    className="px-3 ml-4 leading-5 border rounded h-14 border-grey-dark text-5 min-w-[220px] sm:min-w-[150px] w-full"
-                  >
-                    <option value="-1">Party</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
+                    control={control}
+                    customWidth="min-w-[220px] sm:min-w-[150px]"
+                  />
                 </div>
               </div>
 
