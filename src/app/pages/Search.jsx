@@ -51,9 +51,10 @@ const Search = () => {
                     type="party"
                     name="booking-party"
                     id="booking-party"
+                    defaultChecked="-1"
                     className="px-3 ml-4 leading-5 border rounded h-14 border-grey-dark text-5 min-w-[220px] sm:min-w-[150px] w-full"
                   >
-                    <option selected>Party</option>
+                    <option value="-1">Party</option>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
