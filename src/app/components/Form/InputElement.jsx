@@ -10,7 +10,6 @@ const InputElement = ({
   errors,
   ...props
 }) => {
-  console.log('>>>>> component errors: ', errors)
   return (
     <Controller
       {...props}
