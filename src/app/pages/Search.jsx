@@ -12,7 +12,7 @@ const Search = () => {
   }
 
   return (
-    <PageLayouts pageId={id} isSignup={false}>
+    <PageLayouts pageId={id} isSignup={false} isFooter={false}>
       <div className="flex justify-center flex-grow sm:items-center">
         <div className="search-form-wrapper md:max-w-[840px] w-full mx-auto p-5 pt-10 sm:p-10 bg-white sm:shadow-light">
           <p className="font-avenir-regular text-5 sm:text-6.25 text-center sm:text-left">
