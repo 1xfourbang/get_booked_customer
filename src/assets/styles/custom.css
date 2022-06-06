@@ -15,12 +15,12 @@
 
 [type='time'] {
   background: #fff url(../images/icons/icon-arrowdown.svg) 95% 50% no-repeat;
-  background-size: 20%;
+  background-size: 17.5%;
 }
 
 [type='party'] {
   background: #fff url(../images/icons/icon-arrowdown.svg) 95% 50% no-repeat;
-  background-size: 13%;
+  background-size: 17.5%;
   appearance: unset;
 }
 
