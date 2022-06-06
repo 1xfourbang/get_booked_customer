@@ -1,14 +1,16 @@
 import React from 'react'
 import { Controller } from 'react-hook-form'
-import { Calendar } from '../Icons'
 
 const InputElement = ({
   name,
   control,
   type = 'text',
   customWidth,
+  label,
+  errors,
   ...props
 }) => {
+  console.log('>>>>> component errors: ', errors)
   return (
     <Controller
       {...props}
@@ -16,9 +18,7 @@ const InputElement = ({
       control={control}
       render={({ field: { value, onChange }, fieldState: { error } }) => (
         <div className="flex items-center">
-          <label htmlFor="datepicker">
-            <Calendar />
-          </label>
+          <label htmlFor="datepicker">{label}</label>
           <input
             type={type}
             name={name}
