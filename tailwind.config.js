@@ -39,6 +39,9 @@ module.exports = {
         7: ['1.75rem', '28px'],
         24.25: ['6.0625rem', '99px'],
       },
+      inset: {
+        screen: '100vh',
+      },
       colors: {
         grey: '#E8E8E8',
         'grey-light': '#FAFAFA',
@@ -52,5 +55,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tw-elements/dist/plugin')],
+  plugins: [],
 }
