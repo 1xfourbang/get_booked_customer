@@ -2,13 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global font configs */
+@font-face {
+  font-family: 'FilsonProMedium';
+  src: url(./assets/font/filson-pro/FilsonProMedium.otf);
+}
+
+@font-face {
+  font-family: 'AvenirNextRegular';
+  src: url(./assets/font/avenir-next/AvenirNextLTPro-Regular.otf);
+}
+
+@font-face {
+  font-family: 'AvenirNextBold';
+  src: url(./assets/font/avenir-next/AvenirNextLTPro-Bold.otf);
+}
+
+@font-face {
+  font-family: 'AvenirNextMedium';
+  src: url(./assets/font/avenir-next/AvenirNextCyr-Medium.ttf);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @apply font-avenir-regular;
 }
 
 code {

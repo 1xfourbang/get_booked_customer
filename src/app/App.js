@@ -3,8 +3,6 @@ import { BrowserRouter, Route, Switch, Router } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import PublicRoutes from './routes/PublicRoutes'
 
-import HomeLayout from './layouts/HomeLayouts'
-
 const history = createBrowserHistory()
 
 const App = () => {
@@ -13,9 +11,7 @@ const App = () => {
       <BrowserRouter>
         <Switch>
           <Route>
-            <HomeLayout>
-              <PublicRoutes />
-            </HomeLayout>
+            <PublicRoutes />
           </Route>
         </Switch>
       </BrowserRouter>

@@ -1,0 +1,42 @@
+@media (max-width: 639px) {
+  .btn-restaurant {
+    @apply h-13 bg-primary text-white max-w-[255px] mx-auto flex items-center justify-center;
+  }
+}
+
+.btn-restaurant.btn-signup {
+  @apply text-black bg-white border-2 border-black border-solid rounded-full text-3;
+}
+
+[type='date'] {
+  background: #fff url(../images/icons/icon-arrowdown.svg) 95% 50% no-repeat;
+  background-size: 12%;
+}
+
+[type='time'] {
+  background: #fff url(../images/icons/icon-arrowdown.svg) 95% 50% no-repeat;
+  background-size: 17.5%;
+}
+
+[type='party'] {
+  background: #fff url(../images/icons/icon-arrowdown.svg) 95% 50% no-repeat;
+  background-size: 17.5%;
+  appearance: unset;
+}
+
+@media (max-width: 767px) {
+  [type='time'],
+  [type='party'] {
+    background-size: 12%;
+  }
+}
+
+[type='date']::-webkit-inner-spin-button,
+[type='time']::-webkit-inner-spin-button {
+  display: none;
+}
+
+[type='date']::-webkit-calendar-picker-indicator,
+[type='time']::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
