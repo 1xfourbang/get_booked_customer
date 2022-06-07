@@ -26,7 +26,7 @@ const Search = () => {
   })
 
   const onSubmit = (data) => {
-    setBooking(data)
+    setBooking({ ...data, pageId: id })
     navigate(`/lists/${id}`)
   }
 

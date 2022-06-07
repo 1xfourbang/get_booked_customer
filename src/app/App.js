@@ -11,6 +11,7 @@ import RestaurantsList from './pages/RestaurantList'
 import Search from './pages/Search'
 import NotFound from './pages/NotFound'
 import { useBooking } from './context/BookingContext'
+import RestaurantsDetails from './pages/RestaurantDetails'
 
 const App = () => {
   return (
@@ -27,6 +28,14 @@ const App = () => {
             </RequireBooking>
           }
         />
+        <Route
+          path="lists/:id/details"
+          element={
+            <RequireBooking>
+              <RestaurantsDetails />
+            </RequireBooking>
+          }
+        />
       </Routes>
     </BrowserRouter>
   )
@@ -36,7 +45,7 @@ function RequireBooking({ children }) {
   const { booking } = useBooking()
   let location = useLocation()
 
-  if (!booking?.booking_date) {
+  if (!booking?.booking_date || !location.pathname.includes(booking?.pageId)) {
     return <Navigate to="/" state={{ from: location }} replace />
   }
 

@@ -31,6 +31,7 @@ module.exports = {
       },
       fontSize: {
         3: ['.75rem', '16px'],
+        3.75: ['15px', '19px'],
         4.5: ['1.125rem', '25px'],
         5: ['1.25rem', '27px'],
         6.25: ['1.5625rem', '34px'],
@@ -47,7 +48,10 @@ module.exports = {
         'grey-light': '#FAFAFA',
         'grey-medium': '#DDDDDD',
         'grey-dark': '#707070',
+        'grey-darker': '#A0A0A0',
         primary: '#604AAF',
+        'red-primary': '#DE1F1F',
+        'blue-primary': '#476FCC',
       },
       boxShadow: {
         light: '6px 3px 13px #0000000F',
