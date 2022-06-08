@@ -15,7 +15,7 @@ const PageHeader = ({ isSignup, pageId }) => {
             {pageId}
           </h4>
           {isSignup && (
-            <div className="signup-wrapper">
+            <div className="hidden signup-wrapper md:block">
               <a
                 href="/signup"
                 className="font-avenir-bold text-[15px] flex items-center h-11 leading-5 px-7 rounded-md bg-grey-light border-2 border-primary text-primary"
