@@ -1,11 +1,13 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import { InputElement, SelectElement } from '.'
 import { useBooking } from '../../context/BookingContext'
 import { Calendar, Times, Users } from '../Icons'
 
 const CustomForm = ({ onSubmit, onSubmitError, wrapperClass }) => {
   const { booking } = useBooking()
+  const navigate = useNavigate()
 
   const {
     control,
@@ -118,6 +120,7 @@ const CustomForm = ({ onSubmit, onSubmitError, wrapperClass }) => {
         <button
           type="button"
           className="font-avenir-medium text-4 leading-4 ml-4 border border-black rounded-full h-8 max-w-[100px] text-black bg-white px-5"
+          onClick={() => navigate(`/search/${booking.pageId}`)}
         >
           Edit
         </button>

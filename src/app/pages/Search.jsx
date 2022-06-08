@@ -10,7 +10,7 @@ import { useBooking } from '../context/BookingContext'
 const Search = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { setBooking } = useBooking()
+  const { booking, setBooking } = useBooking()
 
   const {
     control,
@@ -19,9 +19,9 @@ const Search = () => {
   } = useForm({
     mode: 'all',
     defaultValues: {
-      booking_date: '',
-      booking_time: '',
-      booking_party: '-1',
+      booking_date: booking?.booking_date,
+      booking_time: booking?.booking_time,
+      booking_party: booking?.booking_party ? booking?.booking_party : '-1',
     },
   })
 
