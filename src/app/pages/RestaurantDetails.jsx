@@ -39,7 +39,10 @@ const RestaurantsDetails = () => {
                 </h2>
                 <div className="mt-3">
                   <p className="mb-1 text-black text-5 font-avenir-bold">
-                    Irish • {booking.pageId}
+                    Irish •{' '}
+                    <span className="inline-block first-letter:uppercase">
+                      {booking.pageId}
+                    </span>
                   </p>
                   <p className="text-black text-4.5 md:text-5 font-avenir-medium max-w-[486px]">
                     1 Brewery Place, (Adjacent to Bridge Street), Westport, Co.
