@@ -10,25 +10,18 @@
 
 [type='date'] {
   background: #fff url(../images/icons/icon-arrowdown.svg) 95% 50% no-repeat;
-  background-size: 12%;
+  background-size: 20px;
 }
 
 [type='time'] {
   background: #fff url(../images/icons/icon-arrowdown.svg) 95% 50% no-repeat;
-  background-size: 17.5%;
+  background-size: 20px;
 }
 
 [type='party'] {
   background: #fff url(../images/icons/icon-arrowdown.svg) 95% 50% no-repeat;
-  background-size: 17.5%;
+  background-size: 20px;
   appearance: unset;
-}
-
-@media (max-width: 767px) {
-  [type='time'],
-  [type='party'] {
-    background-size: 12%;
-  }
 }
 
 [type='date']::-webkit-inner-spin-button,

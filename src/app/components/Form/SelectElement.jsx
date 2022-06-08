@@ -6,6 +6,7 @@ const SelectElement = ({
   control,
   type = 'text',
   customWidth,
+  customHeight,
   label,
   errors,
   ...props
@@ -26,7 +27,9 @@ const SelectElement = ({
                 value={value}
                 onChange={onChange}
                 type={type}
-                className={`px-3 ml-3 leading-5 border rounded h-14 border-grey-dark text-5 ${
+                className={`px-3 ml-3 leading-5 border rounded ${
+                  customHeight ? customHeight : 'h-14'
+                } border-grey-dark text-5 ${
                   customWidth ? customWidth : 'min-w-[220px]'
                 }  w-full`}
               >

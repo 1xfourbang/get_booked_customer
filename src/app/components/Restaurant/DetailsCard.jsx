@@ -4,6 +4,7 @@ import uuid from 'react-uuid'
 
 // Placeholder image
 import image from '../../../assets/images/image.png'
+import { CheckboxGroup } from '../Form'
 
 const DetailsCard = ({ restName, times }) => {
   const navigate = useNavigate()
@@ -16,47 +17,30 @@ const DetailsCard = ({ restName, times }) => {
 
   return (
     <div className="item">
-      <div className="border border-grey-darker">
-        <div className="flex md:max-h-[331px]">
-          <div className="image-wrapper md:max-w-[331px]">
-            <img src={image} className="object-cover w-full" />
+      <div className="md:border border-grey-darker">
+        <div className="flex flex-col md:flex-row items-center md:items-start md:min-h-[331px]">
+          <div className="image-wrapper max-w-[400px] sm:max-w-[331px] w-full">
+            <img
+              src={image}
+              className="object-cover w-full h-[331px]"
+              alt="restaurant-img"
+            />
           </div>
-          <div className="flex-grow p-6 content-wrapper">
+          <div className="flex-grow p-3 text-center md:p-6 content-wrapper md:text-left">
             <h4
-              className="font-avenir-bold text-6.75 text-black hover:underline cursor-pointer w-fit"
+              className="font-avenir-bold text-6.75 text-black hover:underline cursor-pointer inline-block"
               onClick={gotoDetails}
             >
               Restaurant
             </h4>
             <p className="text-black text-5 font-avenir-medium">
-              Irish • {restName}
+              Irish •{' '}
+              <span className="inline-block first-letter:uppercase">
+                {restName}
+              </span>
             </p>
             <div className="my-5 time-slots">
-              {times.length > 0 ? (
-                times.map((time) => {
-                  const index = uuid()
-                  return (
-                    <div className="inline-block" key={index}>
-                      <input
-                        type="checkbox"
-                        name="time-slots"
-                        id={`time-slot-${index}`}
-                        className="hidden"
-                      />
-                      <label
-                        htmlFor={`time-slot-${index}`}
-                        className="bg-blue-primary w-[100px] h-10 text-3.75 text-white inline-block py-3 text-center rounded mr-2 mb-2 transition-all duration-100"
-                      >
-                        {time}
-                      </label>
-                    </div>
-                  )
-                })
-              ) : (
-                <p className="font-avenir-medium text-5 text-red-primary">
-                  Times not available within two hours of your selected booking.
-                </p>
-              )}
+              <CheckboxGroup times={times} />
             </div>
             <p className="mt-2 text-base leading-5 font-avenir-regular text-grey-dark">
               View more times for (selected day)

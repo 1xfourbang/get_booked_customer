@@ -1,11 +1,11 @@
-import React, { useContext, createContext, useState, useMemo } from 'react'
+import React, { useContext, createContext, useMemo } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 
 const BookingContext = createContext()
 
 function BookingContextProvider({ children }) {
   const [booking, setBooking] = useLocalStorage('booking', null)
-  const value = useMemo(() => ({ booking, setBooking }), [booking])
+  const value = useMemo(() => ({ booking, setBooking }), [booking, setBooking])
 
   return (
     <BookingContext.Provider value={value}>{children}</BookingContext.Provider>
