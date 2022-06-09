@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CheckboxGroup, CustomForm } from '../components/Form'
 import { useBooking } from '../context/BookingContext'
@@ -18,6 +18,8 @@ const RestaurantsDetails = () => {
   const onSubmitError = (error) => {
     console.log('>>>>>> onSubmitError: ', error)
   }
+
+  useEffect(() => window.scrollTo(0, 0), [])
 
   return (
     <PageLayouts pageId={booking.pageId}>
