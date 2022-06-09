@@ -11,7 +11,7 @@ const PageHeader = ({ isSignup, pageId }) => {
       </div>
       <div className="flex-grow">
         <div className="flex items-center justify-between px-6">
-          <h4 className=" font-filson-medium text-6.75 text-black first-letter:uppercase">
+          <h4 className="font-filson-medium text-5 md:text-6.75 text-black first-letter:uppercase">
             {pageId}
           </h4>
           {isSignup && (

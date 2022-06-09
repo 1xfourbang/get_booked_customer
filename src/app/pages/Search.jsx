@@ -4,7 +4,7 @@ import PageLayouts from '../layouts/PageLayouts'
 import { Calendar, Times, Users } from '../components/Icons'
 import '../../assets/styles/custom.css'
 import { useForm } from 'react-hook-form'
-import { SelectElement, InputElement } from '../components/Form'
+import { SelectElement, DateTimePicker } from '../components/Form'
 import { useBooking } from '../context/BookingContext'
 
 const Search = () => {
@@ -45,7 +45,7 @@ const Search = () => {
             <form onSubmit={handleSubmit(onSubmit, onSubmitError)}>
               <div className="flex flex-col flex-wrap items-center justify-center my-10 -mx-6 md:flex-row md:justify-between md:my-13">
                 <div className="mx-3 mb-5 lg:mx-6">
-                  <InputElement
+                  <DateTimePicker
                     rules={{
                       required: `Date is required`,
                     }}
@@ -57,7 +57,7 @@ const Search = () => {
                   />
                 </div>
                 <div className="mx-3 mb-5 lg:mx-6">
-                  <InputElement
+                  <DateTimePicker
                     rules={{
                       required: `Time is required`,
                     }}

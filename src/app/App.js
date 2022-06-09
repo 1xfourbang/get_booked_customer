@@ -12,6 +12,9 @@ import Search from './pages/Search'
 import NotFound from './pages/NotFound'
 import { useBooking } from './context/BookingContext'
 import RestaurantsDetails from './pages/RestaurantDetails'
+import BookNow from './pages/BookNow'
+import Signup from './pages/Signup'
+import BookSuccess from './pages/BookSuccess'
 
 const App = () => {
   return (
@@ -19,6 +22,7 @@ const App = () => {
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
+        <Route path="signup" element={<Signup />} />
         <Route path="search/:id" element={<Search />} />
         <Route
           path="lists/:id"
@@ -33,6 +37,22 @@ const App = () => {
           element={
             <RequireBooking>
               <RestaurantsDetails />
+            </RequireBooking>
+          }
+        />
+        <Route
+          path="book/:id/"
+          element={
+            <RequireBooking>
+              <BookNow />
+            </RequireBooking>
+          }
+        />
+        <Route
+          path="book/:id/success"
+          element={
+            <RequireBooking>
+              <BookSuccess />
             </RequireBooking>
           }
         />
