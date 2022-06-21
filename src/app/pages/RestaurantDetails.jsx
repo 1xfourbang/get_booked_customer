@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CheckboxGroup, CustomForm } from '../components/Form'
 import { useBooking } from '../context/BookingContext'
@@ -18,6 +18,8 @@ const RestaurantsDetails = () => {
   const onSubmitError = (error) => {
     console.log('>>>>>> onSubmitError: ', error)
   }
+
+  useEffect(() => window.scrollTo(0, 0), [])
 
   return (
     <PageLayouts pageId={booking.pageId}>
@@ -108,6 +110,7 @@ const RestaurantsDetails = () => {
                   <button
                     type="button"
                     className="font-avenir-medium text-4.5 leading-5 border border-primary rounded-full h-11 sm:max-w-[140px] lg:max-w-[180px] w-full text-primary bg-white px-3"
+                    onClick={() => navigate(`/book/${booking.pageId}`)}
                   >
                     Book now
                   </button>

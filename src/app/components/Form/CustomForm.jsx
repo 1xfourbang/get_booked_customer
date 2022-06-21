@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import { InputElement, SelectElement } from '.'
+import { DateTimePicker, SelectElement } from '.'
 import { useBooking } from '../../context/BookingContext'
 import { Calendar, Times, Users } from '../Icons'
 
@@ -32,7 +32,7 @@ const CustomForm = ({ onSubmit, onSubmitError, wrapperClass }) => {
             } -mx-3 md:flex-row`}
           >
             <div className="mx-2 mb-2 lg:mx-3">
-              <InputElement
+              <DateTimePicker
                 rules={{
                   required: `Date is required`,
                 }}
@@ -46,7 +46,7 @@ const CustomForm = ({ onSubmit, onSubmitError, wrapperClass }) => {
               />
             </div>
             <div className="mx-2 mb-2 lg:mx-3">
-              <InputElement
+              <DateTimePicker
                 rules={{
                   required: `Time is required`,
                 }}
