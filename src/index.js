@@ -3,14 +3,16 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './app/App'
 import reportWebVitals from './reportWebVitals'
-import { BookingContextProvider } from './app/context/BookingContext'
+import { BookingContextProvider, RestaurantContextProvider } from './app/context'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <BookingContextProvider>
-      <App />
-    </BookingContextProvider>
+    <RestaurantContextProvider>
+      <BookingContextProvider>
+        <App />
+      </BookingContextProvider>
+    </RestaurantContextProvider>
   </React.StrictMode>,
 )
 
